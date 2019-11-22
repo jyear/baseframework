@@ -48,6 +48,7 @@
         "import-map-overrides": "^1.9.1",
         "single-spa": "^4.4.1",
         "systemjs": "^6.1.4",
-        "vue": "^2.6.10"
+        "vue": "^2.6.10",
+        "vue-router": "^3.1.3"
     }
 }

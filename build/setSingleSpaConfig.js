@@ -43,7 +43,9 @@ function getConfig() {
           );
         `;
     }
-
+    SingleSpaConfig.imports["single-spa"] = "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js";
+    SingleSpaConfig.imports["vue"] = "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js";
+    SingleSpaConfig.imports["vue-router"] = "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js";
     str =
         str +
         `
@@ -51,6 +53,7 @@ function getConfig() {
             })
         })();
     `;
+    // fs.writeFileSync(path.join(__dirname, '../src/assets/start.js'), str, 'utf8')
     return {
         importConfig: `
         <script type="systemjs-importmap"> ${JSON.stringify(

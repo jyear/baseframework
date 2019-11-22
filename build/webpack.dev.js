@@ -11,20 +11,18 @@ var config = {
     },
     devtool: false,
     module: {
-        rules: [
-            {
-                test: /\.(le|c)ss$/,
-                use: [
-                    // {
-                    //   loader: MiniCssExtractPlugin.loader
-                    // },
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader'
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.(le|c)ss$/,
+            use: [
+                // {
+                //   loader: MiniCssExtractPlugin.loader
+                // },
+                'style-loader',
+                'css-loader',
+                'postcss-loader',
+                'less-loader'
+            ]
+        }]
     },
     devServer: {
         historyApiFallback: false,

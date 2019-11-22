@@ -41,9 +41,11 @@ class insertJS {
         res.headerChunks = [];
         res.bodyChunks = [];
         tags.forEach(chunk => {
+            var chunkName = chunk.attributes.src
+            console.log(chunkName)
             if (
                 this.options.headerChunks.indexOf(
-                    chunk.attributes.src.replace(/\.js$/, '')
+                    chunkName.replace(/\.js$/, '')
                 ) != -1
             ) {
                 res.headerChunks.push(chunk);

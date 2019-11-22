@@ -1,6 +1,6 @@
 {
-    "app": {
-        "src": "http://localhost:8081/app.js",
+    "app1": {
+        "src": "http://192.168.2.238:8081/app.js",
         "isStart": true
     }
 }
