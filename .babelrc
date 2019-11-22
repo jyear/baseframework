@@ -1,0 +1,16 @@
+{
+    "presets": ["@babel/env", "@vue/app"],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-classes",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        "@babel/plugin-transform-arrow-functions",
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-transform-strict-mode"
+    ]
+}
