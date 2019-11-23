@@ -38,14 +38,17 @@ function getConfig() {
             location => ${
                 cfg[key].isStart
                     ? 'true'
-                    : 'location => location.pathname.startsWith("/${key}")'
+                    : `location.pathname.startsWith("/${key}")`
             }
           );
         `;
     }
-    SingleSpaConfig.imports["single-spa"] = "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js";
-    SingleSpaConfig.imports["vue"] = "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js";
-    SingleSpaConfig.imports["vue-router"] = "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js";
+    SingleSpaConfig.imports['single-spa'] =
+        'https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js';
+    SingleSpaConfig.imports['vue'] =
+        'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js';
+    SingleSpaConfig.imports['vue-router'] =
+        'https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js';
     str =
         str +
         `

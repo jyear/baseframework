@@ -1,6 +1,10 @@
 {
     "app1": {
-        "src": "http://192.168.2.238:8081/app.js",
+        "src": "http://localhost:8082/app.js",
         "isStart": true
+    },
+    "app2": {
+        "src": "http://localhost:8083/app.js",
+        "isStart": false
     }
 }
