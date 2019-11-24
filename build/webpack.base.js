@@ -41,11 +41,13 @@ var config = {
             //'@common': path.join(__dirname, './common/')
         }
     },
-    //externals: ['vue'],
+    externals: {
+        'vue': 'Vue',
+        // 'vue-router': "VueRouter"
+    },
     module: {
         strictExportPresence: true,
-        rules: [
-            {
+        rules: [{
                 test: /\.html$/,
                 use: {
                     loader: 'underscore-template-loader'
@@ -58,8 +60,7 @@ var config = {
             {
                 test: /\.(tsx?|js)$/,
                 include: RootPath,
-                use: [
-                    {
+                use: [{
                         loader: 'babel-loader'
                     },
                     {
@@ -72,27 +73,23 @@ var config = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            name: 'assets/img/[name].[hash:9].[ext]'
-                        }
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'assets/img/[name].[hash:9].[ext]'
                     }
-                ]
+                }]
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            name: 'assets/font/[name].[hash:9].[ext]'
-                        }
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'assets/font/[name].[hash:9].[ext]'
                     }
-                ]
+                }]
             }
         ]
     },

@@ -1,12 +1,13 @@
 <style lang="less">
+@import './App.less';
 </style>
 <template>
-  <div>
-    框架
-  </div>
+    <div>
+        <div class="header_box_top">222</div>
+    </div>
 </template>
 <script>
 export default {
-  name: 'App'
-}
+    name: 'App'
+};
 </script>
