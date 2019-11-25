@@ -10,29 +10,27 @@ const RootPath = process.cwd();
 var entries = {};
 var cfgs = getConfig();
 
-// entries['single-spa'] = path.join(__dirname, '../src/assets/single-spa.min.js');
-// entries['vue'] = path.join(RootPath, './src/assets/vue.js');
-// entries['vue-router'] = path.join(RootPath, './src/assets/vue-router.js');
-// entries['system'] = path.join(__dirname, '../src/assets/system.js');
+// entries['single-spa'] = path.join(__dirname, '../src/assets/dependent/single-spa.min.js');
+// entries['vue'] = path.join(RootPath, './src/assets/dependent/vue.js');
+// entries['vue-router'] = path.join(RootPath, './src/assets/dependent/vue-router.js');
+// entries['system'] = path.join(__dirname, '../src/assets/dependent/system.js');
 // entries['import-map-overrides'] = path.join(
 //     __dirname,
-//     '../src/assets/import-map-overrides.js'
+//     '../src/assets/dependent/import-map-overrides.js'
 // );
-// entries['amd'] = path.join(__dirname, '../src/assets/amd.js');
+// entries['amd'] = path.join(__dirname, '../src/assets/dependent/amd.js');
 // entries['named-exports'] = path.join(
 //     __dirname,
-//     '../src/assets/named-exports.js'
+//     '../src/assets/dependent/named-exports.js'
 // );
 // entries['named-register'] = path.join(
 //     __dirname,
-//     '../src/assets/named-register.js'
+//     '../src/assets/dependent/named-register.js'
 // );
-// entries['use-default'] = path.join(__dirname, '../src/assets/use-default.js');
-
+// entries['use-default'] = path.join(__dirname, '../src/assets/dependent/use-default.js');
 // entries['start'] = path.join(__dirname, '../src/assets/start.js');
 
-entries['app'] = path.join(RootPath, './src/main.ts');
-
+entries['baseframework'] = path.join(RootPath, './src/main.ts');
 var config = {
     entry: entries,
     resolve: {
@@ -41,13 +39,10 @@ var config = {
             //'@common': path.join(__dirname, './common/')
         }
     },
-    externals: {
-        'vue': 'Vue',
-        // 'vue-router': "VueRouter"
-    },
     module: {
         strictExportPresence: true,
-        rules: [{
+        rules: [
+            {
                 test: /\.html$/,
                 use: {
                     loader: 'underscore-template-loader'
@@ -60,7 +55,8 @@ var config = {
             {
                 test: /\.(tsx?|js)$/,
                 include: RootPath,
-                use: [{
+                use: [
+                    {
                         loader: 'babel-loader'
                     },
                     {
@@ -73,23 +69,27 @@ var config = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: 'assets/img/[name].[hash:9].[ext]'
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            name: 'assets/img/[name].[hash:9].[ext]'
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: 'assets/font/[name].[hash:9].[ext]'
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            name: 'assets/font/[name].[hash:9].[ext]'
+                        }
                     }
-                }]
+                ]
             }
         ]
     },

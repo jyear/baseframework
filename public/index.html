@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="importmap-type" content="systemjs-importmap" />
-    <script type="systemjs-importmap"></script>
-    <title></title>
-    <!-- <link
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="importmap-type" content="systemjs-importmap" />
+        <script type="systemjs-importmap"></script>
+        <title></title>
+        <!-- <link
             rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.7/system/single-spa.min.js"
             as="script"
@@ -19,20 +18,27 @@
             href="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"
             as="script"
             crossorigin="anonymous"
-        /> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <!-- <script src='https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js'></script> -->
-    <script src="https://unpkg.com/import-map-overrides@1.7.2/dist/import-map-overrides.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/system.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/amd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-exports.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-register.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/use-default.min.js"></script>
-</head>
+        />-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.js"></script> -->
+        <script src="https://cdn.bootcss.com/vuex/3.1.1/vuex.js"></script>
+        <script src="https://unpkg.com/import-map-overrides@1.7.2/dist/import-map-overrides.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/system.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/amd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-exports.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-register.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/use-default.min.js"></script>
+        <!-- 引入样式 -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+        />
+        <!-- 引入组件库 -->
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    </head>
 
-<body>
-    <div class="base-framework" id="baseFramework"></div>
-    <script type="systemjs-start"></script>
-</body>
-
+    <body>
+        <div class="base-framework" id="baseFramework"></div>
+        <script type="systemjs-start"></script>
+    </body>
 </html>
